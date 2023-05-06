@@ -6,7 +6,7 @@ move_wrap(true, true, 60);
 
 // Dependiendo de que tecla presionemos,
 // hará una cosa u otra:
-if (keyboard_check(vk_up)) {
+if (keyboard_check(vk_up)||keyboard_check(ord("W"))) { // Es necesario indicarlo en mayúscula.
 	// Se mueve hacia adelante
 	motion_add(image_angle, 0.2);
 	// Esta función, de manera muy simnplificada,
@@ -15,17 +15,17 @@ if (keyboard_check(vk_up)) {
 	//speed += 0.1;
 }
 
-if (keyboard_check(vk_down)) {
+if (keyboard_check(vk_down)||keyboard_check(ord("S"))) {
 	// Se mueve hacia atrás
 	motion_add(image_angle, -0.2);
 }
 
-if (keyboard_check(vk_left)) {
+if (keyboard_check(vk_left)||keyboard_check(ord("A"))) {
 	// Rota hacia la izquierda
 	image_angle += 4;
 }
 
-if (keyboard_check(vk_right)) {
+if (keyboard_check(vk_right)||keyboard_check(ord("D"))) {
 	// Rota hacia la derecha
 	image_angle -= 4;
 }
